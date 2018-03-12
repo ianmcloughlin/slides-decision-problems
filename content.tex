@@ -1,0 +1,88 @@
+\begin{frame}{Decision problem}
+  \redmath{f: S \rightarrow T \textrm{ where } |T| = 2 }
+
+    A decision problem is a map to a set with two elements.
+
+  \vspace{4mm}
+  \begin{exampleblock}{Example}
+    \[ f: \{0,1\}^* \rightarrow \{0,1\} \]
+    \[ f(s) = 0 \Leftrightarrow |s| \equiv_2 0 \]
+  \end{exampleblock}
+
+  \vspace{4mm}
+  \begin{exampleblock}{Another example}
+   \[ f: \{0,1\}^* \rightarrow \{0,1\} \]
+   \[ f(s) = 0 \Leftrightarrow wt(s) \equiv_2 0 \]
+  \end{exampleblock}
+\end{frame}
+
+
+\begin{frame}{Recap on Languages}
+  \begin{description}
+    \setlength\itemsep{6mm}
+    \item[Alphabet:] finite set of symbols, denoted \( \Sigma \).
+    \item[String:] tuple \( w \) over \( \Sigma \).
+    \item[Star:] all strings over \( \Sigma \), denoted \( \Sigma^* \).
+    \item[Language:] subset \( L \) of \( \Sigma^* \).
+    \item[Length:] of a string, denoted \( |w| \).
+  \end{description}
+\end{frame}
+
+
+\begin{frame}{Turing machines recap}
+  For a given input a Turing machine does one of three things:
+  \vspace{4mm}
+  \begin{description}
+    \setlength\itemsep{6mm}
+    \item[Accepts] the input string by finishing in the accept state in a finite number of steps.
+    \item[Rejects] the input string by finishing in the reject/fail state in a finite number of steps.
+    \item[Continues] indefinitely in some sort of infinite loop.
+  \end{description}
+  \vspace{4mm}
+  Remember there are a finite number of states and tape symbols.
+\end{frame}
+
+
+\begin{frame}{Deciders}
+  \redmath{f: \Sigma^* \rightarrow \{ q_f, q_a \}}
+  \vspace{2mm}
+  \begin{description}
+    \setlength\itemsep{6mm}
+    \item[Decider:] a Turing machine that always finishes in a finite number of steps.
+    \item[Decides:] decides the language it accepts.
+    \item[Decidable:] a language is called decidable if any Turing machine decides it.
+  \end{description}
+  \vspace{2mm}
+  \red{Important question: are all languages decidable?}
+\end{frame}
+
+
+
+\begin{frame}{PRIMES}
+  Is there a decider that decides if the input is a prime number?
+
+  \red{Yes}
+
+  We can make a Turing machine that counts up to a number, divides and checks the remainder is zero.
+
+  \vspace{2mm}
+
+  We call the language containing strings representing the prime numbers in binary form PRIMES.
+
+  \red{PRIMES \( = \{ x \mid x \in \mathbb{N} \textrm{ and } x \textrm{ is prime} \} \) }
+
+  So, PRIMES is decidable.
+\end{frame}
+
+
+
+\begin{frame}{An undecidable language}
+  
+  \begin{itemize}
+    \setlength\itemsep{6mm}
+    \item Encode all Turing machines as strings over some finite alphabet.
+    \item Consider the subset of Turing machines that are deciders.
+    \item This set is undecidable.
+  \end{itemize}
+
+\end{frame}
